@@ -1,0 +1,26 @@
+{
+  "name": "challenge-3-hours-blogging",
+  "version": "1.0.0",
+  "description": "3 Hours Challenge - Blogging System Using Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junthehacker/challenge-3-hours-blogging.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/junthehacker/challenge-3-hours-blogging/issues"
+  },
+  "homepage": "https://github.com/junthehacker/challenge-3-hours-blogging#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "js-sha512": "^0.7.1",
+    "sqlite3": "^3.1.13",
+    "uuid": "^3.2.1"
+  }
+}
