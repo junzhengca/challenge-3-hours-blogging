@@ -16,6 +16,10 @@ function defaultCreateTableCallback(result){
  */
 module.exports = (db) => {
     const driver = new SQLite3Driver(db)
+    
+    /**
+     * Create table for posts
+     */
     driver.createTable('posts', [
         {
             name: 'id',
@@ -36,6 +40,10 @@ module.exports = (db) => {
             type: 'TEXT'
         }
     ], defaultCreateTableCallback)
+    
+    /**
+     * Create table for admin users
+     */
     driver.createTable('users', [
         {
             name: 'id',
@@ -56,6 +64,10 @@ module.exports = (db) => {
             type: 'TEXT'
         }
     ], defaultCreateTableCallback)
+
+    /**
+     * Create table for auth tokens
+     */
     driver.createTable('tokens', [
         {
             name: 'id',

@@ -2,6 +2,7 @@ const express    = require('express')
 const app        = express()
 const config     = require('./config')
 const sqlite3    = require('sqlite3').verbose()
+// Change database to other than :memory:, in-memory database will be lost when closed.
 const db         = new sqlite3.Database(':memory:')
 const sha512     = require('js-sha512').sha512
 const bodyParser = require('body-parser')

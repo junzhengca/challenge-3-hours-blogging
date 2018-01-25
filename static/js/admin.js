@@ -1,3 +1,9 @@
+/**
+ * Set a new cookie, update existing
+ * @param {*} cname 
+ * @param {*} cvalue 
+ * @param {*} exdays 
+ */
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -5,6 +11,10 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+/**
+ * Get a cookie, return "" if none found
+ * @param {*} cname 
+ */
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
@@ -21,6 +31,9 @@ function getCookie(cname) {
     return "";
 }
 
+/**
+ * Initialize Vue.js
+ */
 var app = new Vue({
     el: '#app',
     data: {
@@ -43,6 +56,9 @@ var app = new Vue({
         this.loadAllPosts()
     },
     methods: {
+        /**
+         * Attempt a login
+         */
         login: function(){
             var self = this
             axios.post("/api/v1/login", {
@@ -56,6 +72,9 @@ var app = new Vue({
                 alert("用户名或密码不正确")
             })
         },
+        /**
+         * Create a new blog post
+         */
         newPost: function(){
             var self = this
             axios.post("/api/v1/createNewPost", {
@@ -72,12 +91,18 @@ var app = new Vue({
                 alert("创建文章失败")
             })
         },
+        /**
+         * Reload all blog posts
+         */
         loadAllPosts: function(){
             var self = this
             axios.get("/api/v1/posts").then(function(data) {
               self.posts = data.data  
             })
         },
+        /**
+         * Save/upate a blog post
+         */
         savePost: function(){
             var self = this
             axios.post("/api/v1/updatePost", {
@@ -94,6 +119,9 @@ var app = new Vue({
                 alert("保存文章失败")
             })
         },
+        /**
+         * Delete a blog post
+         */
         deletePost: function(id){
             var self = this
             if(confirm("你确定要删除这个博文？")){
