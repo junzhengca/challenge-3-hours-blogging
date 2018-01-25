@@ -1,6 +1,8 @@
 # challenge-3-hours-blogging
 3 Hours Challenge - Blogging System Using Node.js
 
+使用了 express.js，没有使用任何其他框架
+
 ## 如何使用
 
 * 首先打开 config.js，修改 `port` 至你想用的端口，修改 `adminPassword` 为你的用户密码。
